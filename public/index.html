@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Resume Builder</title>
+  </head>
+  <body>
+    <main>
+      <h1>Resume Builder</h1>
+      <form class="input-form" onkeyup="handleForm(event)">
+        <div>
+          <textarea name="text" id="summary" placeholder="Professional Summary"></textarea>
+        </div>
+        <div>
+          <input type="text" id="name" placeholder="Full Name" />
+          <input type="text" id="position" placeholder="position" />
+        </div>
+        <div>
+          <input type="text" id="city" placeholder="City" />
+          <input type="text" id="email" placeholder="Email" />
+        </div>
+        <div>
+          <input type="number" id="number" placeholder="Number" />
+          <input type="text" id="github" placeholder="GitHub" />
+          <input type="text" id="linkedin" placeholder="LinkedIn" />
+        </div>
+        <div>
+            <select id="selectQualification">
+                <option value="Qualification">Qualification</option>
+                <option value="school">school</option>
+                <option value="university">university</option>
+            </select>
+          <input type="text" id="university" placeholder="College / University Name" />
+        </div>
+        <div>
+          <input type="text" id="experience" placeholder="Experience details" />
+        </div>
+        <div>
+          <input type="text" id="skills" placeholder="Skills and Frameworks" />
+        </div>
+        <div>
+          <input type="text" id="soft-skills" placeholder="Soft Skills" />
+        </div>
+        <div>
+          <input type="text" id="interest" placeholder="Interest" />
+        </div>
+        <div>
+          <input type="file" accept="image/*" id="readUrl" />
+        </div>
+      </form>
+      <div id="data"></div>
+    </main>
+  </body>
+</html>
