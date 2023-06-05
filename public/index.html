@@ -61,60 +61,99 @@
           <button onclick="submitForm()">Click</button>
         </div>
       </div>
-      <div id="data"></div>
+      <!-- <div id="resume-container"></div> -->
+
+      <div id="resume-container">
+        <aside class="left-aside">
+          <section class="img-section">
+            <img id="resume_img" />
+          </section>
+          <section class="info-section">
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>My Contact</h4>
+              </div>
+
+              <div>
+                <h6 id="resume_city"></h6>
+                <h6 id="resume_email"></h6>
+                <h6 id="resume_number"></h6>
+                <h6 id="resume_linkedin"></h6>
+                <h6 id="resume_github"></h6>
+              </div>
+            </section>
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>Education</h4>
+              </div>
+
+              <div>
+                <h5 id="resume_qualification"></h5>
+                <p id="resume_qualification_details"></p>
+              </div>
+            </section>
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>Skills and Frameworks</h4>
+              </div>
+              <p id="resume_skills"></p>
+            </section>
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>Soft Skills</h4>
+              </div>
+              <p id="resume_softSkills"></p>
+            </section>
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>Interests</h4>
+              </div>
+              <p id="resume_interest"></p>
+            </section>
+          </section>
+        </aside>
+
+        <aside class="right-aside">
+          <section class="header">
+            <div class="line-with-icon">
+              <div></div>
+              <i class="fa-solid fa-circle-dot"> </i>
+              <div></div>
+            </div>
+            <div class="header-name">
+              <h1 id="resume_fullName"></h1>
+              <p id="resume_position"></p>
+            </div>
+            <div class="line-with-icon">
+              <div></div>
+              <i class="fa-solid fa-circle-dot"> </i>
+              <div></div>
+            </div>
+          </section>
+
+          <section class="info-section">
+            <section class="child-section">
+              <div class="heading-div">
+                <i class="fa-solid fa-circle-dot"> </i>
+                <h4>Professional Summary</h4>
+              </div>
+              <p id="resume_summary"></p>
+            </section>
+
+          </section>
+        </aside>
+      </div>
     </main>
   </body>
 </html>
 
-<script>
-  function submitForm() {
-    var summary = document.getElementById("summary").value;
-    var fullName = document.getElementById("name").value;
-    var position = document.getElementById("position").value;
-    var city = document.getElementById("city").value;
-    var email = document.getElementById("email").value;
-    var number = document.getElementById("number").value;
-    var github = document.getElementById("github").value;
-    var linkedin = document.getElementById("linkedin").value;
-    var qualification = document.getElementById("university").value;
-    var experience = document.getElementById("experience").value;
-    var skills = document.getElementById("skills").value;
-    var softSkills = document.getElementById("softSkills").value;
-    var interest = document.getElementById("interest").value;
-    var image = document.getElementById("image").files[0];
-
-    var resumeData = new FormData();
-    resumeData.append("summary", summary);
-    resumeData.append("fullName", fullName);
-    resumeData.append("position", position);
-    resumeData.append("city", city);
-    resumeData.append("email", email);
-    resumeData.append("number", number);
-    resumeData.append("github", github);
-    resumeData.append("linkedin", linkedin);
-    resumeData.append("qualification", qualification);
-    resumeData.append("experience", experience);
-    resumeData.append("skills", skills);
-    resumeData.append("softSkills", softSkills);
-    resumeData.append("interest", interest);
-    resumeData.append("image", image);
-
-    console.log(resumeData);
-
-    fetch("/submit-form", {
-      method: "POST",
-      body: resumeData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          alert("Form submitted successfully!");
-        } else {
-          alert("Form submission failed.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-</script>
+<script src="script.js"></script>
+<script
+  src="https://kit.fontawesome.com/7d41c29fcc.js"
+  crossorigin="anonymous"
+></script>

@@ -88,7 +88,7 @@ app.post("/submit-form", upload.single("image"), (req, res) => {
 
   resumeData
     .save()
-    .then((res) => res.json({ status: true }))
+    .then(() => res.json({ status: true }))
     .catch((err) => {
       console.log(err);
       res.json({ status: false });
