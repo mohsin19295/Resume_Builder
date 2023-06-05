@@ -11,9 +11,13 @@
   <body>
     <main>
       <h1>Resume Builder</h1>
-      <form class="input-form" onkeyup="handleForm(event)">
+      <div class="form">
         <div>
-          <textarea name="text" id="summary" placeholder="Professional Summary"></textarea>
+          <textarea
+            name="text"
+            id="summary"
+            placeholder="Professional Summary"
+          ></textarea>
         </div>
         <div>
           <input type="text" id="name" placeholder="Full Name" />
@@ -29,12 +33,16 @@
           <input type="text" id="linkedin" placeholder="LinkedIn" />
         </div>
         <div>
-            <select id="selectQualification">
-                <option value="Qualification">Qualification</option>
-                <option value="school">school</option>
-                <option value="university">university</option>
-            </select>
-          <input type="text" id="university" placeholder="College / University Name" />
+          <select id="selectQualification">
+            <option value="Qualification">Qualification</option>
+            <option value="school">school</option>
+            <option value="university">university</option>
+          </select>
+          <input
+            type="text"
+            id="university"
+            placeholder="College / University Name"
+          />
         </div>
         <div>
           <input type="text" id="experience" placeholder="Experience details" />
@@ -43,16 +51,70 @@
           <input type="text" id="skills" placeholder="Skills and Frameworks" />
         </div>
         <div>
-          <input type="text" id="soft-skills" placeholder="Soft Skills" />
+          <input type="text" id="softSkills" placeholder="Soft Skills" />
         </div>
         <div>
           <input type="text" id="interest" placeholder="Interest" />
         </div>
         <div>
-          <input type="file" accept="image/*" id="readUrl" />
+          <input type="file" accept="image/*" id="image" />
+          <button onclick="submitForm()">Click</button>
         </div>
-      </form>
+      </div>
       <div id="data"></div>
     </main>
   </body>
 </html>
+
+<script>
+  function submitForm() {
+    var summary = document.getElementById("summary").value;
+    var fullName = document.getElementById("name").value;
+    var position = document.getElementById("position").value;
+    var city = document.getElementById("city").value;
+    var email = document.getElementById("email").value;
+    var number = document.getElementById("number").value;
+    var github = document.getElementById("github").value;
+    var linkedin = document.getElementById("linkedin").value;
+    var qualification = document.getElementById("university").value;
+    var experience = document.getElementById("experience").value;
+    var skills = document.getElementById("skills").value;
+    var softSkills = document.getElementById("softSkills").value;
+    var interest = document.getElementById("interest").value;
+    var image = document.getElementById("image").files[0];
+
+    var resumeData = new FormData();
+    resumeData.append("summary", summary);
+    resumeData.append("fullName", fullName);
+    resumeData.append("position", position);
+    resumeData.append("city", city);
+    resumeData.append("email", email);
+    resumeData.append("number", number);
+    resumeData.append("github", github);
+    resumeData.append("linkedin", linkedin);
+    resumeData.append("qualification", qualification);
+    resumeData.append("experience", experience);
+    resumeData.append("skills", skills);
+    resumeData.append("softSkills", softSkills);
+    resumeData.append("interest", interest);
+    resumeData.append("image", image);
+
+    console.log(resumeData);
+
+    fetch("/submit-form", {
+      method: "POST",
+      body: resumeData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          alert("Form submitted successfully!");
+        } else {
+          alert("Form submission failed.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+</script>
