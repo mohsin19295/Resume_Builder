@@ -99,7 +99,7 @@ textarea {
 
 /* Resume Container */
 
-#resume-container{
+#resume-container {
     margin: auto;
     height: 100vh;
     width: 90%;
@@ -109,18 +109,14 @@ textarea {
     display: none;
 }
 
-
-#resume-container > *{
-    width: 50%;
+#resume-container>* {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 0.1rem 0.5rem;
 }
 
-/* Common in Both Aside */
-
-#resume-container .img-section{
+#resume-container .img-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,7 +126,8 @@ textarea {
     max-width: 120px;
 }
 
-#resume-container p, #resume-container span{
+#resume-container p,
+#resume-container span {
     font-size: 0.8rem;
     font-weight: 400;
 }
@@ -148,32 +145,13 @@ textarea {
     gap: 0.3rem;
 }
 
-#resume-container .heading-div {
-     display: flex;
-     gap: 0.5rem;
-     align-items: center;
- }
 
- #resume-container .left-aside{
-    background-color: rgba(128, 128, 128, 0.068);
- }
-/* Right Aside Header */
-
-#resume-container .header h1{
-    font-size: 1.8rem;
-}
-
-#resume-container .header p{
-    font-size: 1.3rem;
-}
-
-
-#resume-container .line-with-icon{
-    display:flex;
+#resume-container .line-with-icon {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    
+
 }
 
 #resume-container .line-with-icon>div {
@@ -181,8 +159,8 @@ textarea {
     border-top: 2px solid black
 }
 
-#resume-container .header-name{
-    display:flex;
+#resume-container .header-name {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

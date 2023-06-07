@@ -58,7 +58,7 @@ function fetchResumeData() {
       data.forEach(function (formEntry) {
         document.getElementById("resume_summary").innerHTML = formEntry.summary;
         document.getElementById("resume_fullName").innerHTML =
-          formEntry.fullName;
+         formEntry.fullName;
         document.getElementById("resume_position").innerHTML =
           formEntry.position;
         document.getElementById("resume_city").innerHTML = formEntry.city;

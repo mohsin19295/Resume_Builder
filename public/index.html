@@ -62,91 +62,59 @@
         </div>
       </div>
       <!-- <div id="resume-container"></div> -->
+      <button onclick="downloadAsPDF()">Download as PDF</button>
 
       <div id="resume-container">
-        <aside class="left-aside">
-          <section class="img-section">
-            <img id="resume_img" />
+        <section class="img-section">
+          <img id="resume_img" />
+          <div class="header-name">
+            <h1 id="resume_fullName"></h1>
+            <p id="resume_position"></p>
+          </div>
+        </section>
+
+        <section class="info-section">
+          <section class="child-section">
+            <h4>Professional Summary</h4>
+
+            <p id="resume_summary"></p>
           </section>
-          <section class="info-section">
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>My Contact</h4>
-              </div>
 
-              <div>
-                <h6 id="resume_city"></h6>
-                <h6 id="resume_email"></h6>
-                <h6 id="resume_number"></h6>
-                <h6 id="resume_linkedin"></h6>
-                <h6 id="resume_github"></h6>
-              </div>
-            </section>
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>Education</h4>
-              </div>
+          <section class="child-section">
+            <h4>My Contact</h4>
 
-              <div>
-                <h5 id="resume_qualification"></h5>
-                <p id="resume_qualification_details"></p>
-              </div>
-            </section>
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>Skills and Frameworks</h4>
-              </div>
-              <p id="resume_skills"></p>
-            </section>
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>Soft Skills</h4>
-              </div>
-              <p id="resume_softSkills"></p>
-            </section>
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>Interests</h4>
-              </div>
-              <p id="resume_interest"></p>
-            </section>
-          </section>
-        </aside>
-
-        <aside class="right-aside">
-          <section class="header">
-            <div class="line-with-icon">
-              <div></div>
-              <i class="fa-solid fa-circle-dot"> </i>
-              <div></div>
-            </div>
-            <div class="header-name">
-              <h1 id="resume_fullName"></h1>
-              <p id="resume_position"></p>
-            </div>
-            <div class="line-with-icon">
-              <div></div>
-              <i class="fa-solid fa-circle-dot"> </i>
-              <div></div>
+            <div>
+              <h6>City: <span id="resume_city"></span></h6>
+              <h6>Email: <span id="resume_email"></span></h6>
+              <h6>Number: <span id="resume_number"></span></h6>
+              <h6>LinkedIn: <span id="resume_linkedin"></span></h6>
+              <h6>GitHub: <span id="resume_github"></span></h6>
             </div>
           </section>
+          <section class="child-section">
+            <h4>Education</h4>
 
-          <section class="info-section">
-            <section class="child-section">
-              <div class="heading-div">
-                <i class="fa-solid fa-circle-dot"> </i>
-                <h4>Professional Summary</h4>
-              </div>
-              <p id="resume_summary"></p>
-            </section>
-
+            <div>
+              <h5 id="resume_qualification"></h5>
+              <p id="resume_qualification_details"></p>
+            </div>
           </section>
-        </aside>
+          <section class="child-section">
+            <h4>Skills and Frameworks</h4>
+
+            <p id="resume_skills"></p>
+          </section>
+          <section class="child-section">
+            <h4>Soft Skills</h4>
+
+            <p id="resume_softSkills"></p>
+          </section>
+          <section class="child-section">
+            <h4>Interests</h4>
+
+            <p id="resume_interest"></p>
+          </section>
+        </section>
       </div>
     </main>
   </body>

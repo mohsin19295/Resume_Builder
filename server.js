@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json());
-const PORT = 8080;
+const PORT = 8081;
 
 // mongoose connection
 mongoose.connect("mongodb://localhost/resume-data");
