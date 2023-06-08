@@ -54,6 +54,7 @@ function fetchResumeData() {
     .then((response) => response.json())
     .then((data) => {
       // Getting all HTML elements
+      console.log(data)
 
       data.forEach(function (formEntry) {
         document.getElementById("resume_summary").innerHTML = formEntry.summary;

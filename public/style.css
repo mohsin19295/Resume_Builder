@@ -47,7 +47,7 @@ textarea {
     box-shadow: 1px 1px 4px #2e2e2e;
 }
 
-.form div :where(input, select):not(#readUrl) {
+.form div :where(input, select):not(#image) {
     align-items: center;
     width: 100%;
     height: 2rem;
@@ -58,21 +58,10 @@ textarea {
     box-shadow: 4px 4px 12px #2e2e2e;
 }
 
-.form div :where(input, select):hover:not(#readUrl) {
+.form div :where(input, select):hover:not(#image) {
     box-shadow: 1px 1px 5px #2e2e2e;
 }
 
-
-#save {
-    padding: 5px 10px;
-    border: 0;
-    box-shadow: 3px 3px 5px black;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
 
 @media screen and (max-width:768px) {
 
@@ -105,30 +94,46 @@ textarea {
     width: 90%;
     max-width: 600px;
     gap: 1rem;
-    border: 1px solid #0003;
-    display: none;
-}
-
-#resume-container>* {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 0.1rem 0.5rem;
+    padding: 1rem;
+    border: 1px solid #0003;
 }
 
-#resume-container .img-section {
+#resume-container .header-section {
     display: flex;
-    justify-content: center;
+    gap: 5rem;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
-#resume-container img {
-    max-width: 120px;
+.header-section .header-img {
+    width: 7rem;
+    height: 7rem;
 }
 
-#resume-container p,
+.header-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.header-name p{
+    font-size: 1.2rem;
+}
+
+.header-name h1 {
+    padding-left: 0;
+}
+
+
 #resume-container span {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
 }
 
@@ -143,25 +148,4 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.3rem;
-}
-
-
-#resume-container .line-with-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-}
-
-#resume-container .line-with-icon>div {
-    width: 100px;
-    border-top: 2px solid black
-}
-
-#resume-container .header-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
