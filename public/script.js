@@ -37,29 +37,29 @@ function submitForm() {
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-          alert("Form submitted successfully!");
-          fetchResumeData();
-        } else {
+        alert("Form submitted successfully!");
+        fetchResumeData();
+      } else {
         alert("Form submission failed.");
-    }
+      }
     })
     .catch((error) => {
-        console.error("Error:", error);
+      console.error("Error:", error);
     });
 }
 function fetchResumeData() {
-    document.getElementById("resume-container").style.display = "flex";
-    
-    fetch("/resume-data")
+  document.getElementById("resume-container").style.display = "flex";
+
+  fetch("/resume-data")
     .then((response) => response.json())
     .then((data) => {
       // Getting all HTML elements
-      console.log(data)
+      console.log(data);
 
       data.forEach(function (formEntry) {
         document.getElementById("resume_summary").innerHTML = formEntry.summary;
         document.getElementById("resume_fullName").innerHTML =
-         formEntry.fullName;
+          formEntry.fullName;
         document.getElementById("resume_position").innerHTML =
           formEntry.position;
         document.getElementById("resume_city").innerHTML = formEntry.city;
@@ -82,3 +82,19 @@ function fetchResumeData() {
     });
 }
 fetchResumeData();
+
+// Download as a pdf
+
+window.onload = () => {
+  document.getElementById("download").addEventListener("click", () => {
+    const resume = this.document.getElementById("resume-container");
+    var opt = {
+      margin: 1,
+      filename: "myfile.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    html2pdf().from(resume).set(opt).save();
+  });
+};
