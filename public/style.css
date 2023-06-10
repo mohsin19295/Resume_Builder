@@ -37,17 +37,46 @@ textarea {
     width: 100%;
     gap: 2rem;
     outline: none;
+    position: relative;
 }
 
-.form #selectQualification {
+.form #qualification {
     flex: 0 1 30%;
+}
+
+.form #passout_year{
+    flex: 0 1 25%;
+}
+
+.form #qualification_city{
+    flex: 0 1 30%;
+}
+
+.form #submit_div{
+    display: flex;
+    align-items: center;
+}
+
+.form button {
+    position: absolute;
+    right: 1rem;
+    padding: 8px 15px;
+    background-color: blue;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .form>*:hover {
     box-shadow: 1px 1px 4px #2e2e2e;
 }
 
-.form div :where(input, select):not(#image) {
+.form div :where(input):not(#image) {
     align-items: center;
     width: 100%;
     height: 2rem;
@@ -58,7 +87,7 @@ textarea {
     box-shadow: 4px 4px 12px #2e2e2e;
 }
 
-.form div :where(input, select):hover:not(#image) {
+.form div :where(input):hover:not(#image) {
     box-shadow: 1px 1px 5px #2e2e2e;
 }
 
@@ -108,8 +137,8 @@ textarea {
 }
 
 .header-section .header-img {
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
 }
 
 .header-img img {
@@ -125,10 +154,7 @@ textarea {
 
 .header-name p{
     font-size: 1.2rem;
-}
-
-.header-name h1 {
-    padding-left: 0;
+    text-align: center;
 }
 
 
@@ -149,3 +175,22 @@ textarea {
     align-items: flex-start;
     gap: 0.3rem;
 }
+
+#qualification_div p{
+    display: inline-block;
+ }
+
+ #download{
+    width: fit-content;
+    padding: 7px 10px;
+    margin: 0 auto 1rem;
+    background-color: maroon;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+ }

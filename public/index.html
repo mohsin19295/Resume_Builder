@@ -33,16 +33,14 @@
           <input type="text" id="linkedin" placeholder="LinkedIn" />
         </div>
         <div>
-          <select id="selectQualification">
-            <option value="Qualification">Qualification</option>
-            <option value="school">school</option>
-            <option value="university">university</option>
-          </select>
+         <input type="text" id="qualification" placeholder="Highest qualification">
           <input
             type="text"
-            id="university"
+            id="university_name"
             placeholder="College / University Name"
           />
+          <input type="text" placeholder="Qualification City" id="qualification_city">
+          <input type="number" placeholder="Pass-out Year" id="passout_year">
         </div>
         <div>
           <input type="text" id="experience" placeholder="Experience details" />
@@ -56,18 +54,18 @@
         <div>
           <input type="text" id="interest" placeholder="Interest" />
         </div>
-        <div>
+        <div id="submit_div">
           <input type="file" accept="image/*" id="image" />
-          <button onclick="submitForm()">Click</button>
+          <button onclick="submitForm()">Submit</button>
         </div>
       </div>
       <!-- <div id="resume-container"></div> -->
       <button id="download">Download as PDF</button>
-
+      
       <div id="resume-container">
         <section class="header-section">
          <div class="header-img">
-          <img id="resume_img" src="https://images.pexels.com/photos/16079636/pexels-photo-16079636/free-photo-of-light-sea-landscape-sky.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+          <img id="resume_img" />
          </div>
           <div class="header-name">
             <h1 id="resume_fullName"></h1>
@@ -96,9 +94,11 @@
           <section class="child-section">
             <h4>Education</h4>
 
-            <div>
+            <div id="qualification_div">
               <h5 id="resume_qualification"></h5>
               <p id="resume_qualification_details"></p>
+              <p id="resume_qualification_city"></p>
+              <p id="resume_qualification_year"></p>
             </div>
           </section>
           <section class="child-section">

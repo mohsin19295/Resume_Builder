@@ -7,7 +7,10 @@ function submitForm() {
   var number = document.getElementById("number").value;
   var github = document.getElementById("github").value;
   var linkedin = document.getElementById("linkedin").value;
-  var qualification = document.getElementById("university").value;
+  var qualification = document.getElementById("qualification").value;
+  var universityName = document.getElementById("university_name").value;
+  var qualificationCity = document.getElementById("qualification_city").value;
+  var passoutYear = document.getElementById("passout_year").value;
   var experience = document.getElementById("experience").value;
   var skills = document.getElementById("skills").value;
   var softSkills = document.getElementById("softSkills").value;
@@ -24,6 +27,9 @@ function submitForm() {
   resumeData.append("github", github);
   resumeData.append("linkedin", linkedin);
   resumeData.append("qualification", qualification);
+  resumeData.append("universityName", universityName);
+  resumeData.append("qualificationCity", qualificationCity);
+  resumeData.append("passoutYear", passoutYear);
   resumeData.append("experience", experience);
   resumeData.append("skills", skills);
   resumeData.append("softSkills", softSkills);
@@ -70,11 +76,18 @@ function fetchResumeData() {
         document.getElementById("resume_github").innerHTML = formEntry.github;
         document.getElementById("resume_qualification").innerHTML =
           formEntry.qualification;
+        document.getElementById("resume_qualification_details").innerHTML =
+          formEntry.universityName + ",";
+        document.getElementById("resume_qualification_city").innerHTML =
+          formEntry.qualificationCity + ",";
+        document.getElementById("resume_qualification_year").innerHTML =
+          formEntry.passoutYear;
         document.getElementById("resume_skills").innerHTML = formEntry.skills;
         document.getElementById("resume_softSkills").innerHTML =
           formEntry.softSkills;
         document.getElementById("resume_interest").innerHTML =
           formEntry.interest;
+        document.getElementById("resume_img").src = "/uploads/" + formEntry.image;
       });
     })
     .catch((error) => {
