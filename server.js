@@ -72,6 +72,13 @@ app.post("/submit-form", upload.single("image"), (req, res) => {
     softSkills,
     interest,
   } = req.body;
+
+  // Checking if the image file exists
+  if (!req.file || !req.file.filename) {
+    return res.status(400).json({ error: "Image file is missing or invalid" });
+  }
+
+  // If the image file exists
   const image = req.file;
 
   // creating a new resume data document

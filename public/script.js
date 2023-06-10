@@ -42,9 +42,11 @@ function submitForm() {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data.success) {
-        alert("Form submitted successfully!");
+      if (data.status) {
         fetchResumeData();
+        alert("Form submitted successfully!");
+      } else if (image === undefined) {
+        alert("Please select an Image");
       } else {
         alert("Form submission failed.");
       }
@@ -54,14 +56,10 @@ function submitForm() {
     });
 }
 function fetchResumeData() {
-  document.getElementById("resume-container").style.display = "flex";
-
   fetch("/resume-data")
     .then((response) => response.json())
     .then((data) => {
       // Getting all HTML elements
-      console.log(data);
-
       data.forEach(function (formEntry) {
         document.getElementById("resume_summary").innerHTML = formEntry.summary;
         document.getElementById("resume_fullName").innerHTML =
@@ -82,12 +80,15 @@ function fetchResumeData() {
           formEntry.qualificationCity + ",";
         document.getElementById("resume_qualification_year").innerHTML =
           formEntry.passoutYear;
-        document.getElementById("resume_skills").innerHTML = formEntry.skills;
+        document.getElementById("resume_skills").innerHTML = formEntry.skills
+          .split(",")
+          .join(" | ");
         document.getElementById("resume_softSkills").innerHTML =
-          formEntry.softSkills;
+          formEntry.softSkills.split(",").join(" | ");
         document.getElementById("resume_interest").innerHTML =
-          formEntry.interest;
-        document.getElementById("resume_img").src = "/uploads/" + formEntry.image;
+          formEntry.interest.split(",").join(" | ");
+        document.getElementById("resume_img").src =
+          "/uploads/" + formEntry.image;
       });
     })
     .catch((error) => {
