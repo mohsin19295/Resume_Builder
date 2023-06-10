@@ -176,7 +176,7 @@ textarea {
     gap: 0.3rem;
 }
 
-#qualification_div p{
+#qualification_div p, #experience_div *{
     display: inline-block;
  }
 

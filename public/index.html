@@ -33,17 +33,27 @@
           <input type="text" id="linkedin" placeholder="LinkedIn" />
         </div>
         <div>
-         <input type="text" id="qualification" placeholder="Highest qualification">
+          <input
+            type="text"
+            id="qualification"
+            placeholder="Highest qualification"
+          />
           <input
             type="text"
             id="university_name"
             placeholder="College / University Name"
           />
-          <input type="text" placeholder="Qualification City" id="qualification_city">
-          <input type="number" placeholder="Pass-out Year" id="passout_year">
+          <input
+            type="text"
+            placeholder="Qualification City"
+            id="qualification_city"
+          />
+          <input type="number" placeholder="Pass-out Year" id="passout_year" />
         </div>
         <div>
-          <input type="text" id="experience" placeholder="Experience details" />
+          <input type="text" id="company_name" placeholder="Company Name" />
+          <input type="text" id="from_date" placeholder="From i.e 31/12/2000" />
+          <input type="text" id="to_date" placeholder="To i.e 31/12/2003" />
         </div>
         <div>
           <input type="text" id="skills" placeholder="Skills and Frameworks" />
@@ -55,18 +65,18 @@
           <input type="text" id="interest" placeholder="Interest" />
         </div>
         <div id="submit_div">
-          <input type="file" accept="image/*" id="image" required/>
+          <input type="file" accept="image/*" id="image" required />
           <button onclick="submitForm()">Submit</button>
         </div>
       </div>
       <!-- <div id="resume-container"></div> -->
       <button id="download">Download as PDF</button>
-      
+
       <div id="resume-container">
         <section class="header-section">
-         <div class="header-img">
-          <img id="resume_img" />
-         </div>
+          <div class="header-img">
+            <img id="resume_img" />
+          </div>
           <div class="header-name">
             <h1 id="resume_fullName"></h1>
             <p id="resume_position"></p>
@@ -101,6 +111,17 @@
               <p id="resume_qualification_year"></p>
             </div>
           </section>
+
+          <section class="child-section">
+            <h4>Experience</h4>
+
+            <div id="experience_div">
+              <p style="font-weight: 600;" id="resume_company_name"></p>
+              <p id="resume_from_date"></p>
+              <p id="resume_to_date"></p>
+            </div>
+          </section>
+
           <section class="child-section">
             <h4>Skills and Frameworks</h4>
 

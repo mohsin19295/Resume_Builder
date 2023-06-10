@@ -11,7 +11,9 @@ function submitForm() {
   var universityName = document.getElementById("university_name").value;
   var qualificationCity = document.getElementById("qualification_city").value;
   var passoutYear = document.getElementById("passout_year").value;
-  var experience = document.getElementById("experience").value;
+  var companyName = document.getElementById("company_name").value;
+  var fromDate = document.getElementById("from_date").value;
+  var toDate = document.getElementById("to_date").value;
   var skills = document.getElementById("skills").value;
   var softSkills = document.getElementById("softSkills").value;
   var interest = document.getElementById("interest").value;
@@ -30,7 +32,9 @@ function submitForm() {
   resumeData.append("universityName", universityName);
   resumeData.append("qualificationCity", qualificationCity);
   resumeData.append("passoutYear", passoutYear);
-  resumeData.append("experience", experience);
+  resumeData.append("companyName", companyName);
+  resumeData.append("fromDate", fromDate);
+  resumeData.append("toDate", toDate);
   resumeData.append("skills", skills);
   resumeData.append("softSkills", softSkills);
   resumeData.append("interest", interest);
@@ -80,6 +84,9 @@ function fetchResumeData() {
           formEntry.qualificationCity + ",";
         document.getElementById("resume_qualification_year").innerHTML =
           formEntry.passoutYear;
+        document.getElementById("resume_company_name").innerHTML = formEntry.companyName
+        document.getElementById("resume_from_date").innerHTML = "(" + formEntry.fromDate + "- ";
+        document.getElementById("resume_to_date").innerHTML = formEntry.toDate + ")";
         document.getElementById("resume_skills").innerHTML = formEntry.skills
           .split(",")
           .join(" | ");
