@@ -15,7 +15,7 @@ main {
     margin: 1rem auto;
 }
 
-h1 {
+main h1 {
     text-align: center;
     padding: 1rem;
 }
@@ -65,6 +65,7 @@ textarea {
     color: white;
     font-size: 1rem;
     border: 0;
+    max-height: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -93,24 +94,14 @@ textarea {
 
 
 @media screen and (max-width:768px) {
+    .form{
+        padding: .5rem;
+        gap: .8rem;
+    }
 
     .form>* {
-        width: 100%;
-        gap: 1rem;
-        padding: .5rem;
-    }
-
-    main {
-        margin: auto
-    }
-
-    .singleDiv img {
-        height: 90%;
-        width: 10%;
-    }
-
-    .singleDiv h4 {
-        width: 30%;
+        gap: .5rem;
+        padding: .3rem;
     }
 }
 
@@ -122,16 +113,21 @@ textarea {
     height: 100vh;
     width: 90%;
     max-width: 600px;
-    gap: 1rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
     border: 1px solid #0003;
 }
 
+#resume-container span, p{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 #resume-container .header-section {
     display: flex;
-    gap: 5rem;
+    gap: 15%;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
@@ -151,16 +147,9 @@ textarea {
     -o-border-radius: 50%;
 }
 
-.header-name p{
-    font-size: 1.2rem;
+#resume-container .header-name p{
     text-align: center;
-    margin-top: -10px;
-}
-
-
-#resume-container span {
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 #resume-container .info-section {
@@ -176,9 +165,14 @@ textarea {
     gap: 0.3rem;
 }
 
+#resume-container #contact_div > *{
+    line-height: 1.3;
+}
+
 #qualification_div p, #experience_div *{
     display: inline-block;
  }
+
 
  #download{
     width: fit-content;
