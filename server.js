@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
@@ -8,7 +9,8 @@ app.use(express.json());
 const PORT = 8082;
 
 // mongoose connection
-mongoose.connect("mongodb://localhost/resume-data");
+mongoose.connect(process.env.MONGO_URI);
+
 
 // Creating a Schema for Resume data
 const resumeDataSchema = new mongoose.Schema({
